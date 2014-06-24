@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content">
+        <name>RSS plugin</name>
+        <author>sedrakpc</author>
+        <creationDate>May 30th, 2013</creationDate>
+        <copyright>This extension in released under the GNU/GPL License</copyright>
+        <license>GNU General Public License</license>
+        <authorEmail>sedrak.dalaloyan@yandex.ru</authorEmail>
+        <authorUrl>https://github.com/sedrakpc</authorUrl>
+        <version>1.0</version>
+        <description><![CDATA[
+
+         RSS feed for Joomla! 2.5. Using: {rss}{/rss}, or {rss}your feed link{/rss}, or {rss word_count_title="25" rssimage="0"}your feed link{/rss}. You can change such parameters: rsstitle (0/1), rssdesc(0/1), rssimage(0/1), rssimagelink(0/1), rssitems, word_count_title, rssitemdesc(0/1), word_count_descr, rsscache, mp3_player(0/1/2), width, height, media_align, media_enable(0/1).<br />
+
+         This plugin used 1pixel mp3 flash player and mp3 flash player from http://www.nesium.com/blog/2006/10/05/flash-mp3-player/ and dewplayer from http://www.blup.fr/2005/12/03/dewplayer-reloaded/.
+
+         ]]>
+         </description>
+        <files>
+                <filename plugin="rssfeed">rssfeed.php</filename>
+                <filename>rssfeed/index.html</filename>
+                <filename>rssfeed/mp3.swf</filename>
+                <filename>rssfeed/1pixel.swf</filename>
+                <filename>rssfeed/dewplayer.swf</filename>
+        </files>
+        <config>
+                <fields name="params">
+                        <fieldset name="basic">
+                                <field name="enabled" type="radio" default="1" label="Enable Plugin" description="Enable or Disable Plugin">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                 </field>
+                                 <field name="moduleclass_sfx" type="text" default="" label="Plugin Class Suffix" description="A suffix to be applied to the css class of the module (table.moduletable), this allows individual module styling" />
+                                 <field name="rsscache" type="text" size="6" default="10" label="RSS Cache time (min.)" description="Set the cache time for this RSS feed in minutes!" />
+                                <field name="@spacer" type="spacer" default="" label="" description="" />
+                                <field name="rssurl" type="text" size="40" default="" label="Default RSS URL" description="Enter the URL of the RSS/RDF feed" />
+
+                                <field name="rssrtl" type="radio" default="0" label="RTL feed" description="Display feed in RTL direction">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+                                <field name="rsstitle" type="radio" default="1" label="Feed Title" description="Display news feed title">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+                                <field name="rssdesc" type="radio" default="1" label="Feed Description" description="Show the description text for the whole Feed">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+                                 <field name="rssimage" type="radio" default="1" label="Feed Image" description="Show the image associated with the whole Feed">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+                                <field name="rssimagelink" type="radio" default="1" label="Link to Feed Image" description="Show the image associated with the whole Feed and clickable">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+
+                                <field name="rssitems" type="text" default="10" label="Items" description="Enter number of RSS items to display" />
+                                <field name="@spacer" type="spacer" default="" label="Tooltip Settings" description="These settings below are related to the mouseover tooltip" />
+                                <field name="word_count_title" type="text" size="6" default="0" label="Word Count Title" description="Allows you to limit the visible item title text (words). 0 will show all the text" />
+                                <field name="rssitemdesc" type="radio" default="1" label="Enable Description in item" description="Show item description">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                </field>
+                                <field name="word_count_descr" type="text" size="6" default="0" label="Word Count Description" description="Allows you to limit the amount of visible item description text. 0 will show all the text" />
+                                <field name="@spacer" type="spacer" default="" label="Media frame" description="These settings below are related to Media frame" />
+                                <field name="media_enable" type="radio" default="0" label="Media enable" description="Enable Media display. You should turn on with PHP5 and turn off with PHP4.">
+                                        <option value="1">Enbale</option>
+                                        <option value="0">Disable</option>
+                                </field>
+
+                                <field name="width" type="text" default="320" label="Width" description="Enter default width for Media player" />
+                                <field name="height" type="text" default="240" label="Height" description="Enter default height for Media player" />
+
+                                <field name="mp3_player" type="radio" default="0" label="Mp3 player" description="Mp3 player setting">
+                                        <option value="0">Default</option>
+                                        <option value="1">1Pixel</option>
+                                        <option value="2">dewplayer</option>
+                                </field>        
+
+                                <field name="media_align" type="radio" default="center" label="Media alignment" description="Media alignment setting">
+                                        <option value="left">Left</option>
+                                        <option value="center">Center</option>
+                                        <option value="right">Right</option>
+                                </field>
+                        </fieldset>
+                </fields>
+        </config>
+</extension>
